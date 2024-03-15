@@ -1,0 +1,11 @@
+# Task 3 info
+- Assume React will be used 
+- Consider the whole app (except login!)
+  - For each View
+    - Define required Components
+    - Consider reusability
+- For each top Component
+  - Define required ViewModel
+    - Variables that configure rendering
+    - Variables that define context
+    - State variable
