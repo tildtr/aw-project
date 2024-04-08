@@ -11,7 +11,7 @@ Stories to use:
 - The user wants to access news about meat production and meat quality in Portugal
 - The user wants to find the most sustainable meat product in his supermarket and get information on it
 
-## 1. Micro-frontends and ADR
+## 1. Micro-frontends and ADR *(DONE)*
 - Write ADRs
 - Micro-frontends are about the *development teams* working on them!
 
@@ -39,4 +39,4 @@ Stories to use:
 - Put into presentable format
 
 ## 6. FE orchestration
-- What is it?
+- Connection lines in the stories
