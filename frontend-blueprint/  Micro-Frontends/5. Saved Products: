@@ -1,0 +1,6 @@
+5. Saved Products:
+
+Single Responsibility: Solely focuses on managing and displaying saved products, ensuring clarity and simplicity for users.
+Reusability: Can be utilized across various parts of the application where saved product functionality is required.
+Independent Deployment: Enables updates or modifications to saved product features without impacting other modules.
+Responsibility: Manages the display of products saved by the user for future reference or purchase consideration.
