@@ -1,0 +1,6 @@
+3. Select Supermarket + Categories Products and Highlights:
+
+Single Responsibility: Focuses on assisting users in selecting supermarkets, browsing product categories, and accessing highlights.
+Reusability: Can be reused across various sections where product selection and browsing are required.
+Autonomous Teams: Dedicated team can manage supermarket selection, product categorization, and highlighting features independently.
+Responsibility: Enables users to choose supermarkets, explore product categories, and view highlighted items within the meat section.
