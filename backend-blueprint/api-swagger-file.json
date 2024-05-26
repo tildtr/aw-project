@@ -1,0 +1,1342 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Meat API",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "News",
+      "description": "Operations related to news articles"
+    },
+    {
+      "name": "Supermarket",
+      "description": "Operations related to supermarkets"
+    },
+    {
+      "name": "Product Catalog Management",
+      "description": "Operations related to product catalog management"
+    },
+    {
+      "name": "Product Prices",
+      "description": "Operations related to product prices"
+    },
+    {
+      "name": "Product Review",
+      "description": "Operations related to product reviews"
+    },
+    {
+      "name": "Product Specific Information",
+      "description": "Operations related to product specific information"
+    },
+    {
+      "name": "Client Authentication",
+      "description": "Operations related to client authentication"
+    },
+    {
+      "name": "Statistics",
+      "description": "Operations related to statistics"
+    },
+    {
+      "name": "Client Information",
+      "description": "Operations related to client information"
+    },
+    {
+      "name": "QRreader",
+      "description": "Operations related to QR code scanning"
+    }
+  ],
+  "paths": {
+    "/news": {
+      "get": {
+        "summary": "Retrieve all news",
+        "tags": [
+          "News"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of news articles"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new news article",
+        "tags": [
+          "News"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/News"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfully created"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete all news articles",
+        "tags": [
+          "News"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          }
+        }
+      }
+    },
+    "/news/{news_id}": {
+      "get": {
+        "summary": "Retrieve a specific news article",
+        "tags": [
+          "News"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "news_id",
+            "required": true,
+            "description": "ID of the news article to retrieve",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved news article"
+          },
+          "404": {
+            "description": "News article not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a specific news article",
+        "tags": [
+          "News"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "news_id",
+            "required": true,
+            "description": "ID of the news article to update",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/News"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
+          },
+          "404": {
+            "description": "News article not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific news article",
+        "tags": [
+          "News"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "news_id",
+            "required": true,
+            "description": "ID of the news article to delete",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "News article not found"
+          }
+        }
+      }
+    },
+    "/supermarket": {
+      "get": {
+        "summary": "Retrieve all supermarkets",
+        "tags": [
+          "Supermarket"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of all supermarkets"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new supermarket",
+        "tags": [
+          "Supermarket"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supermarket"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfully created"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete all supermarkets",
+        "tags": [
+          "Supermarket"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          }
+        }
+      }
+    },
+    "/supermarket/{supermarket_id}": {
+      "get": {
+        "summary": "Retrieve a specific supermarket",
+        "tags": [
+          "Supermarket"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "supermarket_id",
+            "required": true,
+            "description": "ID of the supermarket to retrieve",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved supermarket"
+          },
+          "404": {
+            "description": "Supermarket not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a specific supermarket",
+        "tags": [
+          "Supermarket"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "supermarket_id",
+            "required": true,
+            "description": "ID of the supermarket to update",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supermarket"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
+          },
+          "404": {
+            "description": "Supermarket not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific supermarket",
+        "tags": [
+          "Supermarket"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "supermarket_id",
+            "required": true,
+            "description": "ID of the supermarket to delete",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "Supermarket not found"
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "summary": "Retrieve all products",
+        "tags": [
+          "Product Catalog Management"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of all products"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new product",
+        "tags": [
+          "Product Catalog Management"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfully created"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete all products",
+        "tags": [
+          "Product Catalog Management"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          }
+        }
+      }
+    },
+    "/products/{product_id}": {
+      "get": {
+        "summary": "Retrieve details for a specific product",
+        "tags": [
+          "Product Catalog Management"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to retrieve",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved product details"
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a specific product",
+        "tags": [
+          "Product Catalog Management"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to update",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific product",
+        "tags": [
+          "Product Catalog Management"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to delete",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        }
+      }
+    },
+    "/prices/products": {
+      "get": {
+        "summary": "Retrieve prices for all products",
+        "tags": [
+          "Product Prices"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of all product prices"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new price for a specific product",
+        "tags": [
+          "Product Prices"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Price"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfully created"
+          }
+        }
+      }
+    },
+    "/prices/products/{product_id}": {
+      "get": {
+        "summary": "Retrieve the price for a specific product",
+        "tags": [
+          "Product Prices"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to retrieve the price for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved product price"
+          },
+          "404": {
+            "description": "Product price not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update the price for a specific product",
+        "tags": [
+          "Product Prices"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to update the price for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Price"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
+          },
+          "404": {
+            "description": "Product price not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the price for a specific product",
+        "tags": [
+          "Product Prices"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to delete the price for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "Product price not found"
+          }
+        }
+      }
+    },
+    "/reviews/products": {
+      "get": {
+        "summary": "Retrieve all reviews for all products",
+        "tags": [
+          "Product Review"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of all product reviews"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new review for a specific product",
+        "tags": [
+          "Product Review"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Review"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfully created"
+          }
+        }
+      }
+    },
+    "/reviews/products/{product_id}": {
+      "get": {
+        "summary": "Retrieve reviews for a specific product",
+        "tags": [
+          "Product Review"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to retrieve reviews for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of product reviews"
+          },
+          "404": {
+            "description": "Product reviews not found"
+          }
+        }
+      }
+    },
+    "/details/products": {
+      "get": {
+        "summary": "Retrieve all details for all products",
+        "tags": [
+          "Product Specific Information"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of all product details"
+          }
+        }
+      }
+    },
+    "/details/products/{product_id}": {
+      "get": {
+        "summary": "Retrieve details for a specific product",
+        "tags": [
+          "Product Specific Information"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to retrieve details for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved product details"
+          },
+          "404": {
+            "description": "Product details not found"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add new details for a specific product",
+        "tags": [
+          "Product Specific Information"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to add details for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Detail"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfully created"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete details for a specific product",
+        "tags": [
+          "Product Specific Information"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to delete details for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "Product details not found"
+          }
+        }
+      }
+    },
+    "/auth": {
+      "put": {
+        "summary": "Update information of all clients",
+        "tags": [
+          "Client Authentication"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete all clients",
+        "tags": [
+          "Client Authentication"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          }
+        }
+      }
+    },
+    "/auth/{client_id}": {
+      "put": {
+        "summary": "Update information of a specific client",
+        "tags": [
+          "Client Authentication"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "description": "ID of the client to update",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
+          },
+          "404": {
+            "description": "Client not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific client",
+        "tags": [
+          "Client Authentication"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "description": "ID of the client to delete",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "Client not found"
+          }
+        }
+      }
+    },
+    "/auth/{client_id}/details": {
+      "put": {
+        "summary": "Update specific details of a client",
+        "tags": [
+          "Client Authentication"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "description": "ID of the client to update details for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
+          },
+          "404": {
+            "description": "Client not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete specific details of a client",
+        "tags": [
+          "Client Authentication"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "description": "ID of the client to delete details for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "Client not found"
+          }
+        }
+      }
+    },
+    "/statistics": {
+      "get": {
+        "summary": "Retrieve all statistics",
+        "tags": [
+          "Statistics"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of all statistics"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new statistics for a specific category",
+        "tags": [
+          "Statistics"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Statistics"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfully created"
+          }
+        }
+      }
+    },
+    "/statistics/{statistics_id}": {
+      "get": {
+        "summary": "Retrieve statistics for a specific category",
+        "tags": [
+          "Statistics"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "statistics_id",
+            "required": true,
+            "description": "ID of the statistics to retrieve",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved statistics"
+          },
+          "404": {
+            "description": "Statistics not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update specific statistics",
+        "tags": [
+          "Statistics"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "statistics_id",
+            "required": true,
+            "description": "ID of the statistics to update",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Statistics"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
+          },
+          "404": {
+            "description": "Statistics not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete specific statistics",
+        "tags": [
+          "Statistics"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "statistics_id",
+            "required": true,
+            "description": "ID of the statistics to delete",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "Statistics not found"
+          }
+        }
+      }
+    },
+    "/clients": {
+      "get": {
+        "summary": "Retrieve information list of all clients",
+        "tags": [
+          "Client Information"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of all clients' information"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete information of all clients",
+        "tags": [
+          "Client Information"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          }
+        }
+      }
+    },
+    "/clients/{client_id}": {
+      "get": {
+        "summary": "Retrieve detailed information for a specific client",
+        "tags": [
+          "Client Information"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "description": "ID of the client to retrieve information for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved client information"
+          },
+          "404": {
+            "description": "Client not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update client information",
+        "tags": [
+          "Client Information"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "description": "ID of the client to update information for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientInformation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
+          },
+          "404": {
+            "description": "Client not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete information of a specific client",
+        "tags": [
+          "Client Information"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "description": "ID of the client to delete information for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "Client not found"
+          }
+        }
+      }
+    },
+    "/scan/{product_id}": {
+      "get": {
+        "summary": "Retrieve the QR code linked to a specific product",
+        "tags": [
+          "QRreader"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product to retrieve QR code for",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved QR code"
+          },
+          "404": {
+            "description": "QR code not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific QR code scan record",
+        "tags": [
+          "QRreader"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "description": "ID of the product linked to the QR code scan record to delete",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "QR code scan record not found"
+          }
+        }
+      }
+    },
+    "/scan": {
+      "post": {
+        "summary": "Send an image of a QR code to be scanned and processed",
+        "tags": [
+          "QRreader"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "QR code scanned successfully"
+          },
+          "400": {
+            "description": "Bad request - Unable to process the QR code image"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "News": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "content"
+        ]
+      },
+      "Supermarket": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "location"
+        ]
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "description"
+        ]
+      },
+      "Price": {
+        "type": "object",
+        "properties": {
+          "price": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "price"
+        ]
+      },
+      "Review": {
+        "type": "object",
+        "properties": {
+          "rating": {
+            "type": "number"
+          },
+          "comment": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "rating",
+          "comment"
+        ]
+      },
+      "Detail": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "detail"
+        ]
+      },
+      "Client": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "email"
+        ]
+      },
+      "ClientDetails": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "phone"
+        ]
+      },
+      "Statistics": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "category",
+          "value"
+        ]
+      },
+      "ClientInformation": {
+        "type": "object",
+        "properties": {
+          "information": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "information"
+        ]
+      }
+    }
+  }
+}
